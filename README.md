@@ -154,7 +154,7 @@ If the `item` is created successfully, send back a response with the new
 ```json
 {
     "name": "Meat",
-    "price": $50.000
+    "price": "$50.000"
   }
 ```
 
