@@ -1,3 +1,221 @@
+# Tabs
+
+## Setup
+
+To download the dependencies for the frontend and backend, run:
+
+```console
+$ bundle install
+$ npm install --prefix 
+$ rails db:migrate db:seed
+```
+
+There is some starter code in the `db/seeds.rb` file so that once you've
+generated the models, you'll be able to create data to test your application.
+
+You can run your Rails API on [`localhost:3000`](http://localhost:3000) by running:
+
+```console
+$ rails s
+```
+
+You can run your React app on [`localhost:4000`](http://localhost:4000) by running:
+
+```console
+$ npm start --prefix client
+```
+
+```
+
+ate your own seed data to test the application.
+
+## Routes
+
+Set up the following routes. Make sure to return JSON data in the format
+specified along with the appropriate HTTP verb.
+
+### GET /users
+
+Return JSON data in the format below. **Note**: you should return a JSON
+response in this format, without any additional nested data related to each
+camper.
+
+```json
+[
+  {
+    "full_name": "kiko",
+    "email": "kiko@gmail.com",
+  },
+  {
+    "full_name": "Vernice Brekke DC",
+    "email": "vernice@gmail.com",
+  
+  }
+]
+```
+
+
+If the `user` does not exist, return the following JSON data, along with
+the appropriate HTTP status code:
+
+```json
+{
+  "error": "user not found"
+}
+```
+
+
+
+### POST /Usertabs
+
+This route should create a new `Tab` that is associated with an
+existing `User`and `Item`. It should accept an object with the following
+properties in the body of the request:
+
+```json
+{
+  "tab_id": 9,
+  "user_id": 1,
+ 
+}
+```
+
+If the `tab` is created successfully, send back a response with the data
+related to the `tab`:
+
+```json
+{
+  "id": 1,
+  "name": "Groceries"
+
+}
+```
+
+### POST /Item
+
+This route should create a new `Item`. It should accept an object with the
+following properties in the body of the request:
+
+```json
+{
+    "name": "Meat",
+    "price": 50.000
+  }
+```
+
+If the `item` is created successfully, send back a response with the new
+`Item`:
+
+```json
+{
+    "name": "Meat",
+    "price": $50.000
+  }
+```
+
+If the `Meat` is **not** created successfully, return the following JSON data,
+along with the appropriate HTTP status code:
+
+```json
+{
+  "errors": ["validation errors"]
+}
+```
+
+
+### DELETE /Item/:id
+
+After deleting the `Item`, return an _empty_ response body, along with the
+appropriate HTTP status code.
+
+If the `Item` does not exist, return the following JSON data, along with
+the appropriate HTTP status code:
+
+```json
+{
+  "Item": "Review not found"
+}
+```
+### POST /Item
+
+This route should create a new `Item`. It should accept an object with the
+following properties in the body of the request:
+
+```json
+{
+    "name": "Meat",
+    "price": 50.000
+  }
+```
+
+If the `item` is created successfully, send back a response with the new
+`Item`:
+
+```json
+{
+    "name": "Meat",
+    "price": $50.000
+  }
+```
+
+If the `Meat` is **not** created successfully, return the following JSON data,
+along with the appropriate HTTP status code:
+
+```json
+{
+  "errors": ["validation errors"]
+}
+```
+
+
+### DELETE /Item/:id
+
+After deleting the `Item`, return an _empty_ response body, along with the
+appropriate HTTP status code.
+
+If the `Item` does not exist, return the following JSON data, along with
+the appropriate HTTP status code:
+
+```json
+{
+  "Item": "Review not found"
+}
+```
+### POST /Create account
+This route should create a new `account` that is associated with an
+existing `User`. It should accept an object with the following
+properties in the body of the request:
+
+```json
+{
+  "full_name": "kiko",
+  "email": "kiko@gmail.com",
+  "password": "Kikoqwerty!456789"
+}
+```
+
+
+If the `Create account` is **not** created successfully, return the following JSON data,
+along with the appropriate HTTP status code:
+
+```json
+{
+  "errors": ["validation errors"]
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Project Template: React/Rails API
 
 ## Description
